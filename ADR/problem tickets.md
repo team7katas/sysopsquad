@@ -11,12 +11,13 @@ Proposed
 
 
 
-Decision: 
- - Create a micro service for entering the tickets into the system
- - As this is the part that call center and users face when registering complaints, taking this part away would isolate it from the rest of the system.
- - Because of micro service the load due to entering tickets can be handled as this part is scale-able. 
- 
- 
+## Decision: 
+ - Create a micro service for entering the tickets into the system that only captures the problem tickets and returns confirmation to the client/call center after registering the problem ticket into the system.
+ - In case of spike in usage, more instances can be created. 
+ - Since this is area which is often reported to have problems, we want to isolate it from the rest of the system to reduce the load on the rest of the system and also focus on making it more resilient.
+ - it can be tested indepedantly thus ensuring the reliability of the system.
+  
+
 
 ## Consequences: 
 - database is split (bounded context) 
