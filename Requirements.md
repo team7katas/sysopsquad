@@ -31,65 +31,66 @@ The following stakeholders and their key concerns have been identified:
 ## Functional Requirements
 
 - **UC-1**: **User maintenance**:
-    - Maintain internal users of the syste (SH-1)
-    - Maintain expert skillset, location, and availability (SH-1)
+    1. Maintain internal users of the syste (SH-1)
+    2. Maintain expert skillset, location, and availability (SH-1)
 
 - **UC-2**: **Customer support**:
-    - Customer registration (SH-2)
-    - Customer profile maintenance (SH-2)
-    - Support contracts management (SH-2)
+    1. Customer registration (SH-2)
+    2. Customer profile maintenance (SH-2)
+    3. Support contracts management (SH-2)
 
-- **UC-3**: **Ticket workflow**:
-    - Ticket submission (SH-2, SH-3)
-    - Read and update ticket via mobile and web (SH-3)
-    - Survey submission (SH-2)
+- **UC-3**: **Ticket processing**:
+    1. Ticket submission (SH-2)
+    2. Searching for the right expert (SH-2, SH-3)
+    3. Read and update ticket via mobile and web (SH-3)
+    4. Survey submission (SH-2)
 
 - **UC-4**: **Knowledge base access**:
-    - Knowledge base search via mobile (SH-3)
-    - Knowledge base update via web (SH-3)
+    1. Knowledge base search via mobile (SH-3)
+    2. Knowledge base update via web (SH-3)
 
 - **UC-5**: **Reporting**:
-    - Tracking of ticket operations (SH-4)
-    - Reporting - financial, expert performance, ticketing (SH-4)
+    1. Tracking of ticket operations (SH-4)
+    2. Reporting - financial, expert performance, ticketing (SH-4)
 
 - **UC-6**: **Billing**:
-    - Automatic customer billing (monthly) (SH-2)
-    - View billing history and statements (SH-2)
-    - Billing information maintenance (SH-2)
-    - Billing processing management (SH-2)
+    1. Automatic customer billing (monthly) (SH-2)
+    2. View billing history and statements (SH-2)
+    3. Billing information maintenance (SH-2)
+    4. Billing processing management (SH-2)
 
 - **UC-7**: **Notification**:
-    - Expert assignment notification via SMS or email (SH-2)
-    - Survey notification via email (SH-2)
-    - Ticket assignment notification via mobile (SH-3)
+    1. Expert assignment notification via SMS or email (SH-2)
+    2. Survey notification via email (SH-2)
+    3. Ticket assignment notification via mobile (SH-3)
 
 TBD: Integration with Help Desk?
 
 ## Architectural Characteristics
-- **QA-1**: **scalability**
+- **QA-1**: **scalability** (UC-2, UC-3, UC-4)
     - country scale geography (USA?);
     - number of customers = millions;
     - number of tickets per customer <= 100 (let's assume something crazy);
 
-- **QA-2**: **availability**
+- **QA-2**: **availability** (UC-2, UC-3.1, UC-3.3, UC-3.4, UC-4.1)
     - customer-facing services and KB must be highly available, because outages will make negative impact on business;
     - 99.9% seems reasonable;
 
-- **QA-3**: **elasticity**
-    - the system should remain effective and robust in periods of sales when customers buy a lot and register for support;
+- **QA-3**: **elasticity** (UC-2)
+    - the system should remain effective and robust in periods of sales when customers buy a lot things and register for support;
 
-- **QA-4**: **performance**
+- **QA-4**: **performance** (UC-2, UC-3.1, UC-3.3, UC-3.4, UC-4.1, UC-5)
     - response time < 2s for page load;
-    - response time < 1min for report generation;
+    - reports generation should not take an excessive amount of time;
 
-- **QA-5**: **robustness**
+- **QA-5**: **robustness** (UC-3.2)
     - lost tickets or wrong experts may lead to the business closure;
 
-- **QA-7**: **deployability**
-    - deployments should be safe and avoid regression in unrelated components;
+- **QA-6**: **security** (UC-2, UC-6)
+    - customer personal information and credit cards should be stored in secure and comply to PCI requirements;
 
-- **QA-3**: **security**
-    - customer credit cards should be stored in secure and comply to PCI requirements;
+- **QA-7**: **deployability** (All use cases)
+    - deployments should be safe and avoid regression in unrelated components;
 
 ## Constraints
 - **CON-1**: Integration? Cloud/on-prem?
