@@ -8,29 +8,29 @@
     - customers register their profile, credit card and support plan;
 
 * **UC-3**: **Ticket workflow**:
-    - customers submit tickets via web or by phone call;
+    - customers submit tickets via web or by phone call (admins assist);
     - experts use mobile app to read ticket and change ticket status;
     - experts can search knowledge base via mobile app;
     - users fill out and submit satisfaction surveys;
 
-* **UC-4**: **Knowledge base updating**:
-    - experts update knowledge base via web;
+* **UC-4**: **Knowledge base maintenance**:
+    - experts update knowledge base via web (see ASM-1);
 
 * **UC-5**: **Reporting**:
-    - managers tracking ticket operations;
+    - managers track ticket operations;
     - managers generate reports: financial, expert performance, ticketing;
 
 * **UC-6**: **Billing**:
-    - customers are billed automatically monthly;
-    - customers can view billing history and statements;
+    - customers are billed automatically (monthly);
+    - customers can view their billing history and statements;
     - administrator manages billing processing for customers;
 
 * **UC-7**: **Notification**:
     - customers receive SMS or email about expert assignment;
-    - customers receive email with a link on survey web form;
+    - customers receive email with a link to survey web form;
     - experts receive SMS about ticket assignment;
 
-TBD: Integration with Help Desk?
+TBD: Help Desk?
 
 ## Architectural Characteristics
 
