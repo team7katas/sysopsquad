@@ -11,49 +11,50 @@
     - customers submit tickets via web or by phone call (admins assist);
     - experts use mobile app to read ticket and change ticket status;
     - experts can search knowledge base via mobile app;
+
+* **UC-4**: Survey submission:
     - users fill out and submit satisfaction surveys;
 
-* **UC-4**: **Knowledge base maintenance**:
-    - experts update knowledge base via web (see ASM-1);
+* **UC-5**: **Knowledge base maintenance**:
+    - experts update knowledge base;
 
-* **UC-5**: **Reporting**:
+* **UC-6**: **Reporting**:
     - managers track ticket operations;
     - managers generate reports: financial, expert performance, ticketing;
 
-* **UC-6**: **Billing**:
+* **UC-7**: **Billing**:
     - customers are billed automatically (monthly);
     - customers can view their billing history and statements;
     - administrator manages billing processing for customers;
 
-* **UC-7**: **Notification**:
+* **UC-8**: **Notification**:
     - customers receive SMS or email about expert assignment;
     - customers receive email with a link to survey web form;
     - experts receive SMS about ticket assignment;
 
-TBD: Help Desk?
-
 ## Architectural Characteristics
 
-* **QA-1**: **scalability** (UC-2, UC-3)
+* **QA-1**: **scalability** (UC-3)
     - country scale geography (USA?);
     - number of customers - millions;
     - number of tickets per customer <= 100 (let's assume something crazy);
 
-* **QA-2**: **availability** (UC-2, UC-3, UC-7)
+* **QA-2**: **availability** (UC-2, UC-3, UC-4)
     - customer-facing services and KB must be highly available because outages will make a negative impact on business;
     - 99.9% seems reasonable here;
 
 * **QA-3**: **elasticity** (UC-2)
     - the system should remain effective and robust in periods of sales when customers buy a lot of things and register for support;
 
-* **QA-4**: **performance** (UC-2, UC-3, UC-5)
+* **QA-4**: **performance** (UC-2, UC-3, UC-6)
     - response time < 2s for page load;
+    - knowledge search time several seconds;
     - reports generation should not take an excessive amount of time;
 
 * **QA-5**: **robustness** (UC-3)
     - lost tickets or wrong experts may lead to the business closure;
 
-* **QA-6**: **security** (UC-2, UC-6)
+* **QA-6**: **security** (UC-2, UC-7)
     - customer personal information and credit cards should be stored in secure and comply to PCI requirements;
 
 * **QA-7**: **deployability** (all use cases)
@@ -63,4 +64,8 @@ TBD: Help Desk?
 * **CON-1**: Integration? Cloud/on-prem?
 
 ## Assumptions
-* **ASM-1**: An expert updates KB via web site, not mobile app.
+* ASM-1: Mobile app can be changed
+
+## Questions:
+* What is "help desk"?
+* What is the bottleneck in the monolithic app - code? database?
