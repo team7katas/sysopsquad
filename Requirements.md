@@ -43,21 +43,18 @@
     - customer-facing services and KB must be highly available because outages will make a negative impact on business;
     - 99.9% seems reasonable here;
 
-* **QA-3**: **elasticity** (UC-2)
-    - the system should remain effective and robust in periods of sales when customers buy a lot of things and register for support;
-
-* **QA-4**: **performance** (UC-2, UC-3, UC-6)
+* **QA-3**: **performance** (UC-2, UC-3, UC-6)
     - response time < 2s for page load;
     - knowledge search time several seconds;
     - reports generation should not take an excessive amount of time;
 
-* **QA-5**: **robustness** (UC-3)
+* **QA-4**: **robustness** (UC-3)
     - lost tickets or wrong experts may lead to the business closure;
 
-* **QA-6**: **security** (UC-2, UC-7)
+* **QA-5**: **security** (UC-2, UC-7)
     - customer personal information and credit cards should be stored in secure and comply to PCI requirements;
 
-* **QA-7**: **deployability** (all use cases)
+* **QA-6**: **deployability** (all use cases)
     - deployments should be safe and avoid regression in unrelated components;
 
 ## Constraints
