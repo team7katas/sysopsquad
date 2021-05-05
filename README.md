@@ -1,4 +1,8 @@
-# The Sysops Squad Architectural Kata
+# The Sysops Squad Architectural Kata by O'reilly
+
+## Team:
+Name: Team Seven  
+Members: Pavel, Suheyl, Nikita, Hassan
 
 Please note that all views are documented in [C4 model](https://c4model.com) style, although only System Context, Container and dynamic views are presented. All diagrams are supplied with a key explaining meaning of each shape on the diagram.
 
