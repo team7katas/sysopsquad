@@ -25,4 +25,4 @@ So even-driven approach must be a good fit. Let's consider the trade-offs and be
  - better scalability - what we need;
  - better agility and change management - what we need;
  - better adaptability and extensibility - we still need that;
- - better responsiveness and performance - we need this obe to.
+ - better responsiveness and performance - we need this one too.
