@@ -52,9 +52,26 @@ The architecture is build around three main domains that have been discovered du
 
 The architectural style used here as the bases is Service-based with event-driven elements (see [ADR-1](ADR/ADR-1-service-based.md) and [ADR-2](ADR/ADR-2-event-driven-broker.md) for details).
 
-![Containers](images/containers.jpg "Containers")
+The high-level idea is illustrated on the following diagram. Note that Notification service is shared by all domains. More detailed diagram of each domain containers follows.
+
+![Containers Overview](images/containers.jpg "Containers Overview")
 
 Note that the diagram is focused on domain concerns, so cross-cutting concerns such as logging, authentication, load balancing etc, are not present to make the picture more clear.
+
+#### Customer domain containers
+The following diagram describes customer-facing containers in more detail.
+
+![Customer Containers](images/customer-containers.jpg "Customer Containers")
+
+#### Expert domain containers
+The following diagram describes expert containers in more detail.
+
+![Expert Containers](images/expert-containers.jpg "Expert Containers")
+
+#### Administration domain containers
+The following diagram describes administration containers in more detail.
+
+![Admin Containers](images/admin-containers.jpg "Admin Containers")
 
 ### Sequences
 
