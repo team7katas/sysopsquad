@@ -50,7 +50,7 @@ The architecture is build around three main domains that have been discovered du
  - expert services, such as ticket acceptance and knowledge base search;
  - administration services, such as reporting, user management, ticket tracking etc.
 
-The architectural style used here as the bases is Service-based with event-driven elements (see [ADR-1](ADR/ADR-1-service-based.md) for details).
+The architectural style used here as the bases is Service-based with event-driven elements (see [ADR-1](ADR/ADR-1-service-based.md) and [ADR-2](ADR/ADR-2-event-driven-broker.md) for details).
 
 ![Containers](images/containers.jpg "Containers")
 

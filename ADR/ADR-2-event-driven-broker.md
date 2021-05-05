@@ -13,6 +13,8 @@ The ticket workflow between domains here looks naturally pretty much as messagin
 
 ![Ticket workflow](../images/bpmn-ticket-workflow.jpg "Ticket workflow")
 
+The broker topology should work fine here as all workflows are simple enough and do not require consolidated orchestration.
+
 
 ## Consequences: 
 So even-driven approach must be a good fit. Let's consider the trade-offs and benefits:
