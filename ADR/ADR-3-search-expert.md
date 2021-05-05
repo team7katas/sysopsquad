@@ -10,7 +10,7 @@ Proposed
 
 ## Decision: 
  - A separate component that has access to expert profile to select the correct expert. 
- - it also needs access to monitor the problem ticket queue (see ADR#2) to pick one ticket and select the best expert based on location, problem and his experience (rating perhaps?) 
+ - it also needs access to monitor the problem ticket queue (see ADR#4) to pick one ticket and select the best expert based on location, problem and his experience (rating perhaps?) 
  - As a separate component, testing of this functionality is easier. More emphasis is on testing as there are problems in assigning the expert correctly (match is incorrect). 
  
 

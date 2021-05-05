@@ -41,9 +41,16 @@ The system context is depicted in the following diagram:
 
 The containers diagram that follows shows the high-level shape of the software architecture and how responsibilities are distributed across containers. It also shows the major technology choices and how the containers communicate with one another.
 
-Note that small stickers mark which containers have highest requirement on the specified quality.
+The architecture is build around three main domains that have been discovered during the problem analysis:
+ - customer-facing services, such as ticket submission, customer profiles, survey submission etc;
+ - expert services, such as ticket acceptance and knowledge base search;
+ - administration services, such as reporting, user management, ticket tracking etc.
+
+The architectural style used here as the bases is Service-based with event-driven elements (see [ADR-1](ADR/ADR-1-service-based.md) for details).
 
 ![Containers](images/containers.jpg "Containers")
+
+Note that the diagram is focused on domain concerns, so cross-cutting concerns are not present to make the picture more clear.
 
 ### Sequences
 
@@ -62,3 +69,11 @@ This section explains some key use cases to demonstrate how corresponding workfl
 The deployment diagram illustrates how the system containers are mapped to the infrastructure:
 
 ![Deployment](images/deployment.jpg "Deployment")
+
+## Architecture Decision Records
+
+ - [ADR-1](ADR/ADR-1-service-based.md) Use Service-based architectural style as the basic style
+ - [ADR-2](ADR/ADR-2-event-driven-broker.md) Use broker-based event-driven approach with guaranteed delivery for communicating between domains
+ - [ADR-3](ADR/ADR-3-search-expert.md) Expert assignment should be done by a separate component
+ - [ADR-4](ADR/ADR-4-queuing-the-problem-tickets.md) Queue the problem tickets
+ - [ADR-5](ADR/ADR-5-problem-tickets.md) Handling the problem tickets separately, Isolating from the rest of the system.
