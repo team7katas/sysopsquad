@@ -1,6 +1,6 @@
-# The Sysops Squad Architectural Kata by O'reilly
+# The Sysops Squad Architectural Kata by O'Reilly
 
-## Team:
+## Team
 Name: Team Seven  
 Members: Pavel, Suheyl, Nikita, Hassan
 
@@ -80,11 +80,12 @@ The deployment diagram illustrates how the system containers are mapped to the i
 
 ## Architecture Decision Records
 
- - [ADR-1](ADR/ADR-1-service-based.md) Use Service-based architectural style as the basic style
- - [ADR-2](ADR/ADR-2-event-driven-broker.md) Use broker-based event-driven approach with guaranteed delivery for communicating between domains
- - [ADR-3](ADR/ADR-3-search-expert.md) Expert assignment should be done by a separate component
- - [ADR-4](ADR/ADR-4-queuing-the-problem-tickets.md) Queue the problem tickets
+ - [ADR-1](ADR/ADR-1-service-based.md) Use Service-based architectural style as the basic style.
+ - [ADR-2](ADR/ADR-2-event-driven-broker.md) Use broker-based event-driven approach with guaranteed delivery for communicating between domains.
+ - [ADR-3](ADR/ADR-3-search-expert.md) Expert assignment should be done by a separate component.
+ - [ADR-4](ADR/ADR-4-queuing-the-problem-tickets.md) Queue the problem tickets.
  - [ADR-5](ADR/ADR-5-problem-tickets.md) Handling the problem tickets separately, Isolating from the rest of the system.
- - [ADR-6](ADR/ADR-6-separate-customer-db.md) Use separate customer database
- - [ADR-7](ADR/ADR-7-separate-experts-db.md) Use separate expert database
- - [ADR-8](ADR/ADR-8-messaging-sync.md) Use message-based synchronization of customer data and ticket assignments
+ - [ADR-6](ADR/ADR-6-separate-customer-db.md) Use separate customer database.
+ - [ADR-7](ADR/ADR-7-separate-experts-db.md) Use separate expert database.
+ - [ADR-8](ADR/ADR-8-messaging-sync.md) Use message-based synchronization of customer data and ticket assignments.
+ - [ADR-9](ADR/ADR-9-notification-service.md) Extract notification service.
