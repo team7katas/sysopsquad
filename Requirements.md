@@ -32,7 +32,7 @@
     - customers receive email with a link to survey web form;
     - experts receive SMS about ticket assignment;
 
-## Architectural Characteristics
+## Architecture Characteristics Requirements
 
 * **QA-1**: **scalability** (UC-3)
     - country scale geography (USA?);
@@ -62,7 +62,3 @@
 
 ## Assumptions
 * ASM-1: Mobile app can be changed
-
-## Questions:
-* What is "help desk"?
-* What is the bottleneck in the monolithic app - code? database?
