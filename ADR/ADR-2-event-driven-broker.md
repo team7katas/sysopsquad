@@ -11,7 +11,7 @@ Provide robust communication between domains.
 
 The ticket workflow between domains here looks naturally pretty much as messaging, as illustrated in this BPMN diagram (circles are messages):
 
-![Ticket workflow](images/bpmn-ticket-workflow.jpg "Ticket workflow")
+![Ticket workflow](../images/bpmn-ticket-workflow.jpg "Ticket workflow")
 
 
 ## Consequences: 
