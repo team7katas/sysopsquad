@@ -68,6 +68,10 @@ This section explains some key use cases to demonstrate how corresponding workfl
 
 ![UC-3: Ticket assignment](images/ticket-assignment.jpg "Ticket Assignment")
 
+#### UC-7: Monthly billing
+
+![UC-7: Monthly billing](images/billing-sequence.jpg "Monthly Billing")
+
 ### Deployment
 
 The deployment diagram illustrates how the system containers are mapped to the infrastructure:
