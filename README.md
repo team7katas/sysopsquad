@@ -4,7 +4,7 @@
 Name: Team Seven  
 Members: Pavel, Suheyl, Nikita, Hassan
 
-Please note that all views are documented in [C4 model](https://c4model.com) style, although only System Context, Container and dynamic views are presented. All diagrams are supplied with a key explaining meaning of each shape on the diagram.
+Please note that all views are documented in [C4 model](https://c4model.com) style, although only System Context, Container and dynamic views are presented. The most diagrams use informal notation style. All diagrams are supplied with a key explaining meaning of each shape on the diagram.
 
 ## Business Case
 
@@ -61,14 +61,17 @@ Note that the diagram is focused on domain concerns, so cross-cutting concerns s
 This section explains some key use cases to demonstrate how corresponding workflows pass through containers.
 
 #### UC-3.1: Ticket submission
+The following diagram illustrates the ticket registration workflow by the customer.
 
 ![UC-3: Ticket submission](images/ticket-submission.jpg "Ticket Submission")
 
 #### UC-3.2: Ticket assignment
+The diagram below explains how tickets are taken into processing by experts.
 
 ![UC-3: Ticket assignment](images/ticket-assignment.jpg "Ticket Assignment")
 
 #### UC-7: Monthly billing
+The diagram illustrates the monthly billing workflow.
 
 ![UC-7: Monthly billing](images/billing-sequence.jpg "Monthly Billing")
 
