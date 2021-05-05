@@ -54,7 +54,7 @@ The architectural style used here as the bases is Service-based with event-drive
 
 ![Containers](images/containers.jpg "Containers")
 
-Note that the diagram is focused on domain concerns, so cross-cutting concerns such as logging, authentication, gateways etc, are not present to make the picture more clear.
+Note that the diagram is focused on domain concerns, so cross-cutting concerns such as logging, authentication, load balancing etc, are not present to make the picture more clear.
 
 ### Sequences
 
