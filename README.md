@@ -1,6 +1,6 @@
 # The Sysops Squad Architectural Kata
 
-Please note that all views are documented presented [C4 model](https://c4model.com). All diagrams are supplied with a key explaining meaning of each shape on the diagram.
+Please note that all views are documented in [C4 model](https://c4model.com) style, although only System Context, Container and dynamic views are presented. All diagrams are supplied with a key explaining meaning of each shape on the diagram.
 
 ## Business Case
 
@@ -47,4 +47,18 @@ Note that small stickers mark which containers have highest requirement on the s
 
 ### Sequences
 
+This section explains some key use cases to demonstrate how corresponding workflows pass through containers.
+
+#### UC-3.1: Ticket submission
+
+![UC-3: Ticket submission](images/ticket-submission.jpg "Ticket Submission")
+
+#### UC-3.2: Ticket assignment
+
+![UC-3: Ticket assignment](images/ticket-assignment.jpg "Ticket Assignment")
+
 ### Deployment
+
+The deployment diagram illustrates how the system containers are mapped to the infrastructure:
+
+![Deployment](images/deployment.jpg "Deployment")
