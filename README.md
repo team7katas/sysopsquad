@@ -87,3 +87,4 @@ The deployment diagram illustrates how the system containers are mapped to the i
  - [ADR-5](ADR/ADR-5-problem-tickets.md) Handling the problem tickets separately, Isolating from the rest of the system.
  - [ADR-6](ADR/ADR-6-separate-customer-db.md) Use separate customer database
  - [ADR-7](ADR/ADR-7-separate-experts-db.md) Use separate expert database
+ - [ADR-8](ADR/ADR-8-messaging-sync.md) Use message-based synchronization of customer data and ticket assignments

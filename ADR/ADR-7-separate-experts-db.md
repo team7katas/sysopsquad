@@ -1,5 +1,5 @@
 ## Title: 
-ADR-6: Use separate expert database
+ADR-7: Use separate expert database
 
 ## Status: 
 Proposed
