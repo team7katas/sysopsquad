@@ -18,7 +18,7 @@ Functional and quality requirements are described in [this page ](Requirements.m
 
 This section describes the architecture of the current ticket system.
 
-The current ticket system demonstrates very poor characteristics of availability, maintainability, deployability and performance.
+The current ticket system demonstrates very poor characteristics of availability, maintainability, deployability and performance. Our goal is to design a new system that solves aforementioned problems.
 
 The following diagram depicts the containers diagram of the current ticket system:
 
@@ -26,18 +26,18 @@ The following diagram depicts the containers diagram of the current ticket syste
 
 ## Target Architecture
 
-This section describes the target system architecture
+This section describes the target software architecture.
 
 ### Use Case Model
 
-The following diagram shows mapping of architecture characteristics requirements on use cases based on discovered requirements:
+The following diagram shows mapping of architecture characteristics requirements on the key use cases based on discovered [requirements](Requirements.md):
 
 ![Use Case Model](images/use-case-model.jpg "Use Case Model")
 
 
 ### System Context
 
-The system context is depicted in the following diagram:
+The system context diagram below depicted key users of the system and its external dependencies:
 
 ![System Context](images/system-context.jpg "System Context")
 
