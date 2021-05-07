@@ -1,19 +1,15 @@
 ## Title: 
-ADR-8: Use message-based synchronization of customer data and ticket assignments.
+ADR-8: Use table-based synchronization of customer billing info
 
 ## Status: 
 Proposed
 
 ## Context: 
-Keep customer-facing data and expert ticket assignments in sync between domain parts.
+Since we use a separate database for customer data ([ADR-6](ADR-6-separate-customer-db.md) we need to keep this data in sync with administration database where the billing stuff is running.
 
 ## Decision: 
-Since we use separate database for customer and expert data ([ADR-6](ADR-6-separate-customer-db.md) and [ADR-7](ADR-7-separate-experts-db.md)) we need to keep this data in sync with administration database.
-
-Insofar as we decided to use event-drive approach ([ADR-2](ADR-2-event-driven-broker.md)) we can leverage the messaging system to sync customer billing information changes and ticket assignment changes. This will allow communication to be more uniform across the system and will provide maximum decoupling between domain parts.
+Changing of the customer billing information is not an event that needs immediate reaction. This data will be used monthly by the payment service when it is time, so it is fine if this data will be silently replicated to the billing store.
 
 ## Consequences: 
 
-Eventual consistency is fine here because administration data does not need actual state of the ticket assignment and customer billing info immediately when upon modification.
-
-Alternative would using table-level synchronization, but this will increase coupling of database schema and will require some sort of trigger-based notification what will significantly complicate implementation.
+Depending on the database vendor this can be implemented in a variety of ways. Some databases support table-based replication. In other cases it can be an ETL job that runs periodically.

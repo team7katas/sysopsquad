@@ -48,7 +48,7 @@ The containers diagram that follows shows the high-level shape of the software a
 The architecture is build around three main domains that have been discovered during the problem analysis:
  - customer-facing services, such as ticket submission, customer profiles, survey submission etc;
  - expert services, such as ticket acceptance and knowledge base search;
- - administration services, such as reporting, user management, ticket tracking etc.
+ - administration services, such as reporting, survey analysis, ticket tracking etc.
 
 The architectural style used here as the bases is Service-based with event-driven elements (see [ADR-1](ADR/ADR-1-service-based.md) and [ADR-2](ADR/ADR-2-event-driven-broker.md) for details).
 
@@ -115,6 +115,7 @@ The deployment diagram illustrates how the system containers are mapped to the i
  - [ADR-4](ADR/ADR-4-queuing-the-problem-tickets.md) Queue the problem tickets.
  - [ADR-5](ADR/ADR-5-problem-tickets.md) Handling the problem tickets separately, Isolating from the rest of the system.
  - [ADR-6](ADR/ADR-6-separate-customer-db.md) Use separate customer database.
- - [ADR-7](ADR/ADR-7-separate-experts-db.md) Use separate expert database.
- - [ADR-8](ADR/ADR-8-messaging-sync.md) Use message-based synchronization of customer data and ticket assignments.
+ - [ADR-7](ADR/ADR-7-separate-experts-db.md) Analytics/reporting database.
+ - [ADR-8](ADR/ADR-8-messaging-sync.md) Use table-based synchronization of customer billing info.
  - [ADR-9](ADR/ADR-9-notification-service.md) Extract notification service.
+ - [ADR-10](ADR/ADR-10-modular-services.md) Use sub-domain partitioning for service design.
