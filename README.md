@@ -52,26 +52,35 @@ The architecture is build around three main domains that have been discovered du
 
 The architectural style used here as the bases is Service-based with event-driven elements (see [ADR-1](ADR/ADR-1-service-based.md) and [ADR-2](ADR/ADR-2-event-driven-broker.md) for details).
 
-The high-level idea is illustrated on the following diagram. Note that Notification service is shared by all domains. More detailed diagram of each domain containers follows.
+![Containers](images/containers.jpg "Containers")
 
-![Containers Overview](images/containers.jpg "Containers Overview")
+### Components
+This section provides component decomposition of some key containers of the system.
 
-Note that the diagram is focused on domain concerns, so cross-cutting concerns such as logging, authentication, load balancing etc, are not present to make the picture more clear.
+#### Customer API
+The following diagram illustrates components of the Customer API.
 
-#### Customer domain containers
-The following diagram describes customer-facing containers in more detail.
+![Customer API](images/component-customer-api.jpg "Customer API")
 
-![Customer Containers](images/customer-containers.jpg "Customer Containers")
+#### Sysops Squad API
+The following diagram describes components of the Sysops Squad API.
 
-#### Expert domain containers
-The following diagram describes expert containers in more detail.
+![Sysops Squad API](images/component-squad-api.jpg "Sysops Squad API")
 
-![Expert Containers](images/expert-containers.jpg "Expert Containers")
+#### Administration API
+The following diagram describes components of the Administration API.
 
-#### Administration domain containers
-The following diagram describes administration containers in more detail.
+![Admin Component](images/component-admin-api.jpg "Admin Components")
 
-![Admin Containers](images/admin-containers.jpg "Admin Containers")
+#### Ticket Processor
+The following diagram describes components of the Ticket Processor.
+
+![Ticket Processor](images/component-ticket-processor.jpg "Ticket Processor")
+
+#### Notification Service
+The following diagram describes components of the Notification Service.
+
+![Notification Service](images/component-notification.jpg "Notification Service")
 
 ### Sequences
 
