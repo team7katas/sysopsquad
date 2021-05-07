@@ -1,5 +1,20 @@
 # The Sysops Squad Architectural Kata by O'Reilly
 
+## Contents
+
+- [Team](#team)  
+- [Business Case](#business-case)  
+- [Requirements](#requirements)  
+- [Baseline Architecture](#baseline-architecture)  
+- [Target Architecture](#target-architecture)  
+    - [Use Case Model](#use-case-model)  
+    - [System Context](#system-context)  
+    - [Containers](#containers)  
+    - [Components](#components)  
+    - [Sequences](#sequences)  
+    - [Deployment](#deployment)  
+- [Architecture Decision Records](#architecture-decision-records)
+
 ## Team
 Name: Team Seven  
 Members: Pavel, Suheyl, Nikita, Hassan
