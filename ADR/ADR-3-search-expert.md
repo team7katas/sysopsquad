@@ -1,5 +1,5 @@
 ## Title: 
-Ticket Processor: a separate component for expert assignment
+ADR-3: Separate service for ticket processing.
 
 ## Status: 
 Proposed
@@ -9,13 +9,10 @@ Proposed
 - Often times the wrong consultant shows up to fix something they know nothing about.
 
 ## Decision: 
- - A separate component that has access to expert profile to select the correct expert. 
- - The component has different availability and scalability requirements from the rest of the system. If ticket processing will be unavailable for a short period of time or will not find experts immediately, nothing critical will happen to the operations.
+ - Since this is area which is often reported to have problems, we want to isolate it from the rest of the system to reduce coupling and simplify testability and deloyability of this part.
+ - Customer don't normally expect that their tickets are taken into processing right away, so robustness is over performance here. Hence we can keep a single instance of the service to ensure consistency.
  - This component might be a subject to frequent changes due to the assignment rules and optimization.
- - It also needs access to monitor the problem ticket queue (see ADR#4) to pick one ticket and select the best expert based on location, problem and his experience (rating perhaps?).
- - As a separate component, testing of this functionality is easier. More emphasis is on testing as there are problems in assigning the expert correctly (match is incorrect). 
- 
 
 ## Consequences: 
-- Needs access to the expert profile information (could be a separate DB if micro service is chosen).
- 
+Needs access to the expert profile information (could be a separate DB if micro service is chosen).
+
