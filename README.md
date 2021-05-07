@@ -118,3 +118,4 @@ The deployment diagram illustrates how the system containers are mapped to the i
  - [ADR-8](ADR/ADR-8-messaging-sync.md) Use table-based synchronization of customer billing info.
  - [ADR-9](ADR/ADR-9-notification-service.md) Extract notification service.
  - [ADR-10](ADR/ADR-10-modular-services.md) Use sub-domain partitioning for service design.
+ - [ADR-11](ADR/ADR-11-extract-payment-job.md) Extract payment processing into a separate component (Payment Job)
