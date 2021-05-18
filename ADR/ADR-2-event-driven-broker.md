@@ -17,7 +17,7 @@ The broker topology should work fine here as all workflows are simple enough and
 
 
 ## Consequences: 
-So even-driven approach must be a good fit. Let's consider the trade-offs and benefits:
+So event-driven approach must be a good fit. Let's consider the trade-offs and benefits:
 
  - eventual consistency in ticket state is fine between our domains (see ADR-1), because billing and reporting don't need actual ticket status right now; experts many not available right now so it's ok if the ticket remains in the queue some time;
  - process flow is relatively simple and sequential here with no parallel processing;
