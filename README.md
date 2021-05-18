@@ -97,19 +97,66 @@ The following diagram describes components of the Notification Service.
 
 ![Notification Service](images/component-notification.jpg "Notification Service")
 
-### Sequences
+### Process Views
 
 This section explains some key use cases to demonstrate how corresponding workflows pass through containers.
 
-#### UC-3.1: Ticket submission
-The following diagram illustrates the ticket registration workflow by the customer.
+#### UC-3: Ticket submission
+The following diagram illustrates the ticket registration by the customer.
+
+**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
 
 ![UC-3: Ticket submission](images/ticket-submission.jpg "Ticket Submission")
 
-#### UC-3.2: Ticket assignment
-The diagram below explains how tickets are taken into processing by experts.
+#### UC-3: Ticket Created event
+The diagram below explains how the system processes a new ticket and assigns it an expert.
 
-![UC-3: Ticket assignment](images/ticket-assignment.jpg "Ticket Assignment")
+**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+
+![UC-3: Ticket Created](images/ticket-created.jpg)
+
+#### UC-3: Ticket Assigned
+This diagram continues the ticket workflow and shows how the Ticket Assigned event is processed by the Sysops Expert user.
+
+**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+
+![UC-3: Ticket Assigned](images/ticket-assigned.jpg)
+
+#### UC-3: Ticket Accepted/Rejected
+This diagram illustrates what happens when the Sysops Expert either accepts or rejects the ticket.
+
+**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+
+![UC-3: Ticket Accepted/Rejected](images/ticket-accepted-rejected.jpg)
+
+#### UC-3: Ticket In-Progress
+This diagram demonstrates how the customer is notified when the Sysops Expert accepted the ticket.
+
+**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+
+![UC-3: Ticket In-Progress](images/ticket-inprogress.jpg)
+
+#### UC-3: Ticket Completed
+This diagram explains the process when the Sysops Expert solved the problem and marked the ticket as completed.
+
+**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+
+![UC-3: Ticket Completed](images/ticket-completed.jpg)
+
+#### UC-3: Ticket Resolved
+This diagram illustrates how the customer receives a notification about the ticket resolution and link to the survey form.
+
+**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+
+![UC-3: Ticket Resolved](images/ticket-resolved.jpg)
+
+#### UC-4: Survey Submission
+
+And finally the last step in the ticket resolution flow is survey submission by the customer.
+
+**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+
+![UC-4: Survey Submission](images/survey-submission.jpg)
 
 #### UC-7: Monthly billing
 The diagram illustrates the monthly billing workflow.
