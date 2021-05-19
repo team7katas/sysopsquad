@@ -67,3 +67,4 @@
 * ASM-1: The mobile app can be changed.
 * ASM-2: Helpdesk assistants (aka Call Center) need access to the ticket sub-system and some customer information (contacts, maybe support plan). These are also users of the system although are not listed in the "Main Four Users" of the original requirements.
 * ASM-3: Call tracking system is out of scope of Sysops Squad system.
+* ASM-4: The company stores customer credit card information locally and does not interoperate with a 3-party authority (like 

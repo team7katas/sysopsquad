@@ -8,14 +8,17 @@ Proposed
 Choose overall architectural approach
 
 ## Decision: 
-We discovered three main domain areas here:
- - customer-facing services, such as ticket submission and profile management;
- - operational services, such as knowledge base and ticket workflow;
- - administration services, such as reporting and billing management.
+We discovered four main domain areas here each having a separate group of architectural characteristics:
 
-By using Service-based approach we can enable separate architectural characteristics for these domains. For example, customer-facing services have higher requirements of availability, scalability and performance than the rest of the system. Operational services also require high availability because if an expert will not be able to access the knowledge base, he might not be able to fix the problem. Scalability is not that critical here because the number of experts is not growing as the number of customers. And administration services may only require security where billing operations occur.
+ - Customer-facing services, such as ticket submission and profile management. These require high availability and performance because nothing makes customers so unhappy as a slow or even unavailable system. This part of the system will also have to be scalable because growing the number of customers is the whole key of any business like this.
+ - Operational processes, such as knowledge base and ticket workflow. If an expert is unable to search a ticket or knowledge base article when arrived to the customer residence, they might be unable to fix the problem. What can be worse? This subsystem requires a high availability and performance too.
+ - Billing services. This is about the customers money. If an attacker will get access to the credit card information it will be a disaster and may have legal implications. This part of the system may need to pass PCI certification, so isolating it from the rest of the system will simplify this procedure a lot. This is an isolated security zone with no incoming requests from the other domains.
+ - Administration services, such as user management, analytics and reporting. These people do a very important work but nothing critical will happen if a report generation will take a little longer, or if an administrator will update an expert profile few hour later due to maintenance or something. Security is still important here because admin credentials cannot be exposed, but this is different story from billing security level.
 
-Thus, the Service-based approach provides good fault-tolerance, scalability, and agility possibilities here and with no cost overhead as in Microservices.
+This makes us to think about separate architectural quantas for each of these four domain and Service-based approach seems to be a good shot here. While providing good fault-tolerance, scalability, and agility possibilities it free from cost overhead of Microservices approach.
+
+The other important thing here is that the Service-based style is a good starting point when moving to a distribute architecture from a monolith and enables future expansion for Microservices if a new scalability level will become necessary.
 
 ## Consequences: 
-This may require splitting the database.
+ - This may require splitting the database.
+ - Will need to provide training for the product teams on domains boundaries and responsibilities.
