@@ -4,7 +4,11 @@
 
 - [Team](#team)  
 - [Business Case](#business-case)  
-- [Requirements](#requirements)  
+- [System Requirements](#system-requirements)  
+    - [Functional Requirements](#functional-requirements)
+    - [Architecture Characteristics Requirements](#architecture-characteristics-requirements)
+    - [Constraints](#constraints)
+    - [Assumptions](#assumptions)
 - [Baseline Architecture](#baseline-architecture)  
 - [Target Architecture](#target-architecture)  
     - [Use Case Model](#use-case-model)  
@@ -27,11 +31,82 @@ That's why we decided to make this number a symbol of our team.
 
 ## Business Case
 
-The business case is described [here](BusinessCase.md)
+Penultimate Electronics is a large electronics giant that has numerous retail stores throughout the country. When customers buy computers, TV's, stereos, and other electronic equipment, they can choose to purchase a support plan. Customer-facing technology experts (the "Sysops Squad") will then come to the customers residence (or work office) to fix problems with the electronic device.
 
-## Requirements
+The current trouble ticket system is a large monolithic application that was developed many years ago. Customers are complaining that consultants are never showing up due to lost tickets, and often times the wrong consultant shows up to fix something they know nothing about. Customers and call-center staff have been complaining that the system is not always available for web-based or call-based problem ticket entry. Change is difficult and risky in this large monolith - whenever a change is made, it takes too long and something else usually breaks. Due to reliability issues, the monolithic system frequently "freezes up" or crashes - they think it's mostly due a spike in usage and the number of customers using the system. If something isn't done soon, Penultimate Electronics will be forced to abandon this very lucrative business line and fire all of the experts.
 
-Functional and quality requirements are described in [this page ](Requirements.md)
+## System Requirements
+
+### Functional Requirements
+
+* **UC-1**: **User maintenance**:
+    - administrator maintains internal user accounts;
+    - administrator maintains expert skillset, location, and availability;
+
+* **UC-2**: **Customer registration**:
+    - customers register their profile, credit card and support plan;
+
+* **UC-3**: **Ticket workflow**:
+    - customers submit tickets via web or by phone call (admins assist);
+    - experts use mobile app to read ticket and change ticket status;
+    - experts can search knowledge base via mobile app;
+
+* **UC-4**: Survey submission:
+    - customers fill out and submit satisfaction surveys;
+
+* **UC-5**: **Knowledge base maintenance**:
+    - experts update knowledge base;
+
+* **UC-6**: **Reporting**:
+    - managers track ticket operations;
+    - managers generate reports: financial, expert performance, ticketing;
+
+* **UC-7**: **Billing**:
+    - customers are billed automatically (monthly);
+    - customers can view their billing history and statements;
+    - administrator manages billing processing for customers;
+
+* **UC-8**: **Notification**:
+    - customers receive SMS or email about expert assignment;
+    - customers receive email with a link to survey web form;
+    - experts receive SMS about ticket assignment;
+
+* UC-9: Ticket search:
+    - helpdesk users need access to the ticket base to clarify ticket status;
+
+### Architecture Characteristics Requirements
+
+* **QA-1**: **scalability** (UC-3)
+    - country scale geography (USA?);
+    - number of customers - millions;
+    - number of tickets per customer <= 100 (let's assume something crazy);
+
+* **QA-2**: **availability** (UC-2, UC-3, UC-4)
+    - customer-facing services and KB must be highly available because outages will make a negative impact on business;
+    - 99.9% seems reasonable here;
+
+* **QA-3**: **performance** (UC-2, UC-3, UC-6)
+    - response time < 2s for page load;
+    - knowledge search time several seconds;
+    - reports generation should not take an excessive amount of time;
+
+* **QA-4**: **robustness** (UC-3)
+    - lost tickets or wrong experts may lead to the business closure;
+
+* **QA-5**: **security** (UC-2, UC-7)
+    - customer personal information and credit cards should be stored in secure and comply to PCI requirements;
+
+* **QA-6**: **deployability** (all use cases)
+    - deployments should be safe and avoid regression in unrelated components;
+
+### Constraints
+* **CON-1**: Integration? Cloud/on-prem?
+
+### Assumptions
+* ASM-1: The mobile app can be changed.
+* ASM-2: Helpdesk assistants (aka Call Center) need access to the ticket sub-system and some customer information (contacts, maybe support plan). These are also users of the system although are not listed in the "Main Four Users" of the original requirements.
+* ASM-3: Call tracking system is out of scope of Sysops Squad system.
+* ASM-4: The company stores customer credit card information locally and does not interoperate with a 3-party authority (like 
 
 ## Baseline Architecture
 This section describes the architecture of the current ticket system.
