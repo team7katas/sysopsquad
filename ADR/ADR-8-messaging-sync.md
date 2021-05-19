@@ -2,7 +2,7 @@
 ADR-8: Use table-based synchronization of customer billing info
 
 ## Status: 
-Proposed
+**OBSOLETE**
 
 ## Context: 
 Since we use a separate database for customer data ([ADR-6](ADR-6-separate-customer-db.md) we need to keep this data in sync with administration database where the billing stuff is running.

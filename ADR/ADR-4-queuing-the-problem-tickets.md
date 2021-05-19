@@ -2,7 +2,7 @@
 ADR-4: Queue the problem tickets.
 
 ## Status: 
-Proposed
+**OBSOLETE**
 
 ## Context: 
 - Problem tickets are often lost

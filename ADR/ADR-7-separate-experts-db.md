@@ -2,7 +2,7 @@
 ADR-7: Analytics/reporting database
 
 ## Status: 
-Proposed
+**OBSOLETE**
 
 ## Context: 
 Improve performance and availability of operational services.
