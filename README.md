@@ -177,7 +177,7 @@ The deployment diagram illustrates how the system containers are mapped to the i
 ## Architecture Decision Records
 
  - [ADR-1](ADR/ADR-1-service-based.md) Use Service-based architectural style as the basic style.
- - [ADR-2](ADR/ADR-2-event-driven-broker.md) Use broker-based event-driven approach with guaranteed delivery for communicating between domains.
+ - [ADR-2](ADR/ADR-2-event-driven-broker.md) Use message queues with guaranteed delivery for ticket workflow.
  - [ADR-3](ADR/ADR-3-search-expert.md) Separate service for ticket processing.
  - [ADR-4](ADR/ADR-4-queuing-the-problem-tickets.md) Queue the problem tickets.
  - [ADR-6](ADR/ADR-6-separate-customer-db.md) Use separate customer database.
