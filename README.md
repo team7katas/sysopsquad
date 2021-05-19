@@ -1,8 +1,12 @@
-# The Sysops Squad Architectural Kata by O'Reilly
+# The Sysops Squad Architectural Kata by O'Reilly 2021
+
+## Team Seven
+
+**Pavel, Suheyl, Nikita, Hassan**
 
 ## Contents
 
-- [Team Seven](#team-seven)  
+- [Welcome](#welcome)  
 - [Business Case](#business-case)  
 - [System Requirements](#system-requirements)  
     - [Functional Requirements](#functional-requirements)
@@ -19,8 +23,13 @@
 - [Migration Plan](#migration-plan)
 - [Architecture Decision Records](#architecture-decision-records)
 
-## Team Seven
-Pavel, Suheyl, Nikita, Hassan
+## Welcome
+> *Everything in software architecture is a trade-off.  
+First Law of Software Architecture*
+
+Welcome to the Sysops Squad Architectural Kata run by O'Reilly in May 2021.
+
+This page is architectural documentation for the solution presented by **Team Seven**.
 
 ### About the name
 <img align="right" width="200" height="183" src="images/jersey.jpg">
