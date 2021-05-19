@@ -11,7 +11,7 @@
     - [System Context](#system-context)  
     - [Containers](#containers)  
     - [Components](#components)  
-    - [Sequences](#sequences)  
+    - [Process Views](#process-views)  
     - [Deployment](#deployment)  
 - [Architecture Decision Records](#architecture-decision-records)
 
