@@ -14,7 +14,6 @@
     - [Use Case Model](#use-case-model)  
     - [System Context](#system-context)  
     - [Containers](#containers)  
-    - [Components](#components)  
     - [Process Views](#process-views)  
     - [Deployment](#deployment)  
 - [Migration Plan](#migration-plan)
@@ -149,34 +148,6 @@ The architecture is build around three main domains that have been discovered du
 The architectural style used here as the bases is Service-based with event-driven elements (see [ADR-1](ADR/ADR-1-service-based.md) and [ADR-2](ADR/ADR-2-event-driven-broker.md) for details).
 
 ![Containers](images/containers.jpg "Containers")
-
-### Components
-This section provides component decomposition of some key containers of the system.
-
-#### Customer API
-The following diagram illustrates components of the Customer API.
-
-![Customer API](images/component-customer-api.jpg "Customer API")
-
-#### Sysops Squad API
-The following diagram describes components of the Sysops Squad API.
-
-![Sysops Squad API](images/component-squad-api.jpg "Sysops Squad API")
-
-#### Administration API
-The following diagram describes components of the Administration API.
-
-![Admin Component](images/component-admin-api.jpg "Admin Components")
-
-#### Ticket Processor
-The following diagram describes components of the Ticket Processor.
-
-![Ticket Processor](images/component-ticket-processor.jpg "Ticket Processor")
-
-#### Notification Service
-The following diagram describes components of the Notification Service.
-
-![Notification Service](images/component-notification.jpg "Notification Service")
 
 ### Process Views
 
