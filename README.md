@@ -13,6 +13,7 @@
     - [Components](#components)  
     - [Process Views](#process-views)  
     - [Deployment](#deployment)  
+- [Migration Plan](#migration-plan)
 - [Architecture Decision Records](#architecture-decision-records)
 
 ## Team Seven
@@ -174,6 +175,9 @@ The deployment diagram illustrates how the system containers are mapped to the i
 
 ![Deployment](images/deployment.jpg "Deployment")
 
+## Migration Plan
+TBD
+
 ## Architecture Decision Records
 
  - [ADR-1](ADR/ADR-1-service-based.md) Use Service-based architectural style as the basic style.
@@ -185,4 +189,5 @@ The deployment diagram illustrates how the system containers are mapped to the i
  - [ADR-8](ADR/ADR-8-messaging-sync.md) Use table-based synchronization of customer billing info.
  - [ADR-9](ADR/ADR-9-notification-service.md) Extract notification service.
  - [ADR-10](ADR/ADR-10-modular-services.md) Use sub-domain partitioning for service design.
- - [ADR-11](ADR/ADR-11-extract-payment-job.md) Extract payment processing into a separate component (Payment Job)
+ - [ADR-11](ADR/ADR-11-extract-payment-job.md) Extract payment processing into a separate component (Payment Job).
+ - [ADR-12](ADR/ADR-12-gateways.md) Offload operational concerns into API Gateways.

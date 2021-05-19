@@ -18,7 +18,7 @@ If look at the ticket workflow between domains, it looks naturally pretty much a
 
 ![Ticket workflow](../images/bpmn-ticket-workflow.jpg "Ticket workflow")
 
-Note that we should guarantee message delivery to the exact destination so this end-to-end queue-based messaging, not a topic-based publisher-subscriber communication.
+Note that we should guarantee message delivery to the exact destination so this peer-to-peer queue-based messaging, not a topic-based publisher-subscriber communication.
 
 ## Consequences: 
 Let's consider the trade-offs:
