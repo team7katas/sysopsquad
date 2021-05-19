@@ -19,7 +19,7 @@ This makes us to think about separate architectural quantas for each of these fo
 
 ![Service-based](../images/adr-1.jpg)
 
-The other important thing here is that the Service-based style is a good starting point when moving to a distribute architecture from a monolith and enables future expansion for Microservices if a new scalability level will become necessary.
+The other important thing worth mentioning here is that the Service-based style is a good starting point in evolutionary migration from a monolith to a highly distributed architecture, such as Microservices if a new scalability level will become necessary.
 
 ## Consequences: 
  - This may require splitting the database.

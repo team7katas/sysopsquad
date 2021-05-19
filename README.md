@@ -119,11 +119,11 @@ The diagram below explains how the system processes a new ticket and assigns it 
 
 **Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
 
+![UC-3: Ticket Created](images/ticket-created.jpg)
+
 If an expert cannot be found at the given moment, Ticket Processor will have to work on that ticket once again later - maybe some expert will be freed from the job, or a new expert will appear in the system. Depending on the technology chosen, "delay message" can be implemented in different ways. This can be a native message broker's feature that enables message rescheduling (both RabbitMQ and ActiveMQ support that by the way).
 
 Or, if the message broker does not support that or it is tricky to use, the new event can be rescheduled by using a scheduler, like cron. Anyway, the idea here is that the ticket cannot be forgotten and Ticket Processor has to work on it until an appropriate expert will be found. A manager will pay attention to tickets that stay pending too long and can take some manual action to help the situation.
-
-![UC-3: Ticket Created](images/ticket-created.jpg)
 
 #### UC-3: Ticket Assigned
 This diagram continues the ticket workflow and shows how the Ticket Assigned event is processed by the Sysops Expert user.
