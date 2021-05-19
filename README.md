@@ -15,11 +15,14 @@
     - [Deployment](#deployment)  
 - [Architecture Decision Records](#architecture-decision-records)
 
-## Team
-Name: Team Seven  
-Members: Pavel, Suheyl, Nikita, Hassan
+## Team Seven
+Pavel, Suheyl, Nikita, Hassan
 
-Please note that all views are documented in [C4 model](https://c4model.com) style, although only System Context, Container and dynamic views are presented. The most diagrams use informal notation style. All diagrams are supplied with a key explaining meaning of each shape on the diagram.
+### About the name
+<img align="right" width="200" height="183" src="images/jersey.jpg">
+Magic number Seven... This is not a random number in our name. This number joined our team together. One of us has a birthday at 07/07 thus joined the Team Seven. Somebody had a successful career in a football team under number 7 thus joined the Team Seven. Somebody believes that this is his lucky number throughout the whole life.  
+And of course, the average number of services in Service-based architecture that we defined as our initial candidate, is about 7.
+That's why we decided to make this number a symbol of our team.
 
 ## Business Case
 
@@ -30,8 +33,9 @@ The business case is described [here](BusinessCase.md)
 Functional and quality requirements are described in [this page ](Requirements.md)
 
 ## Baseline Architecture
-
 This section describes the architecture of the current ticket system.
+
+Please note that all views are documented in [C4 model](https://c4model.com) style, although only System Context, Container and dynamic views are presented. The most diagrams use informal notation style. All diagrams are supplied with a key explaining meaning of each shape on the diagram.
 
 The current ticket system demonstrates very poor characteristics of availability, maintainability, deployability and performance. Our goal is to design a new system that solves aforementioned problems.
 
@@ -40,8 +44,9 @@ The following diagram depicts the containers diagram of the current ticket syste
 ![Baseline Architecture](images/baseline.jpg "Baseline Architecture")
 
 ## Target Architecture
-
 This section describes the target software architecture.
+
+Please note that all views are documented in [C4 model](https://c4model.com) style, although only System Context, Container and dynamic views are presented. The most diagrams use informal notation style. All diagrams are supplied with a key explaining meaning of each shape on the diagram.
 
 ### Use Case Model
 
