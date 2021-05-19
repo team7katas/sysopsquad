@@ -13,7 +13,7 @@
     - experts can search knowledge base via mobile app;
 
 * **UC-4**: Survey submission:
-    - users fill out and submit satisfaction surveys;
+    - customers fill out and submit satisfaction surveys;
 
 * **UC-5**: **Knowledge base maintenance**:
     - experts update knowledge base;
@@ -31,6 +31,9 @@
     - customers receive SMS or email about expert assignment;
     - customers receive email with a link to survey web form;
     - experts receive SMS about ticket assignment;
+
+* UC-9: Ticket search:
+    - helpdesk users need access to the ticket base to clarify ticket status;
 
 ## Architecture Characteristics Requirements
 
@@ -61,4 +64,6 @@
 * **CON-1**: Integration? Cloud/on-prem?
 
 ## Assumptions
-* ASM-1: Mobile app can be changed
+* ASM-1: The mobile app can be changed.
+* ASM-2: Helpdesk assistants (aka Call Center) need access to the ticket sub-system and some customer information (contacts, maybe support plan). These are also users of the system although are not listed in the "Main Four Users" of the original requirements.
+* ASM-3: Call tracking system is out of scope of Sysops Squad system.
