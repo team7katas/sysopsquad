@@ -233,8 +233,9 @@ The diagram illustrates the monthly billing workflow.
 The deployment diagram illustrates how the system containers are mapped to the infrastructure:
 
 ![Deployment](images/deployment.jpg "Deployment")
+Note the colors have not special meaning, they are just to distinguish thing from one another.
 
-Note the deployment strategy here is cloud-agnostic, assuming you can use any cloud provider of your choice or stay totally on-prem. An exception is the billing stuff, which is recommended to remain on-prem anyway for security considerations.
+The deployment strategy here is cloud-agnostic, assuming you can use any cloud provider of your choice or stay totally on-prem. An exception is the billing stuff, which is recommended to remain on-prem anyway for security considerations.
 
 ## Migration Plan
 TBD
