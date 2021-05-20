@@ -1,5 +1,5 @@
 ## Title: 
-ADR-3: Separate service for ticket processing.
+ADR-3: Extract ticket processing into a separate service.
 
 ## Status: 
 Proposed

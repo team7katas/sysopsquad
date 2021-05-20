@@ -243,7 +243,7 @@ TBD
 
  - [ADR-1](ADR/ADR-1-service-based.md) Use Service-based architectural style as the basic style.
  - [ADR-2](ADR/ADR-2-event-driven-broker.md) Use message queues with guaranteed delivery for ticket workflow.
- - [ADR-3](ADR/ADR-3-search-expert.md) Separate service for ticket processing.
+ - [ADR-3](ADR/ADR-3-search-expert.md) Extract ticket processing into a separate service.
  - [ADR-6](ADR/ADR-6-separate-customer-db.md) Use separate customer database.
  - [ADR-9](ADR/ADR-9-notification-service.md) Extract notification service.
  - [ADR-10](ADR/ADR-10-modular-services.md) Use sub-domain partitioning for service design.

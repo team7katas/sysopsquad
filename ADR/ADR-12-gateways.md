@@ -14,7 +14,7 @@ So what gateways do we need here? The first candidate is the billing silo, since
 Admin API operates with admin permissions so any intrusion here will make a high impact on the whole business.  
 Customer API and Sysops API need different levels of availability and scalability here so this is another Gateway. And Mobile application may need more efficient data responses than web applications.
 
-An important thing to notice that API Gateways should contain no domain logic. Remember, we are not building an ESB here. API Gateways should care exceptionally about security checks and operational concerns here.
+An important thing to notice that API Gateways should contain no domain logic. Remember, we are not building an ESB here. API Gateways should care exceptionally about security checks, operational concerns here, and simple message routing based the message type. For that reason we leave requests from gateways to the corresponding domains services synchronous making gateways simple pass-through interfaces.
 
 ## Consequences: 
 Again, this adds complexity, because the number of services increases. We should pay careful attention while developing API Gateways to avoid performance bottlenecks and a single point of failure, so they need to be properly load-balanced.
