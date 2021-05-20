@@ -43,6 +43,10 @@ Penultimate Electronics is a large electronics giant that has numerous retail st
 
 The current trouble ticket system is a large monolithic application that was developed many years ago. Customers are complaining that consultants are never showing up due to lost tickets, and often times the wrong consultant shows up to fix something they know nothing about. Customers and call-center staff have been complaining that the system is not always available for web-based or call-based problem ticket entry. Change is difficult and risky in this large monolith - whenever a change is made, it takes too long and something else usually breaks. Due to reliability issues, the monolithic system frequently "freezes up" or crashes - they think it's mostly due a spike in usage and the number of customers using the system. If something isn't done soon, Penultimate Electronics will be forced to abandon this very lucrative business line and fire all of the experts.
 
+The desired solution from the functional perspective is represented at the following marketecture diagram.
+
+![Marketecture](images/marketecture.jpg)
+
 ### Business Drivers
 
 The company suffers from a poorly performing customer support system that can wind up the business line. They want to develop a new robust and highly performing system that will allow them to stay in business and enable future growth.
@@ -143,7 +147,7 @@ This section describes key stakeholders of the system and they architectural con
 * **ASM-1**: The mobile app can be changed.
 * **ASM-2**: Helpdesk assistants (aka Call Center) need access to the ticket sub-system and some customer information (contacts, maybe support plan). These are also users of the system although are not listed in the "Main Four Users" of the original requirements.
 * **ASM-3**: Call tracking system is out of scope of Sysops Squad system.
-* **ASM-4**: The company stores customer credit card information locally and does not interoperate with a 3-party authority (like 
+* **ASM-4**: The company stores customer credit card information locally and does not interoperate with a 3-party authority (like authorize.net in the US).
 
 ## Baseline Architecture
 This section describes the architecture of the current ticket system.
