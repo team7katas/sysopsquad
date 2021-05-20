@@ -55,7 +55,7 @@ The company suffers from a poorly performing customer support system that can wi
 
 ### Stakeholders
 
-This section describes key stakeholders of the system and they architectural concerns.
+This section describes key stakeholders of the system and their architectural concerns.
 
 * **SH-1**: Administrator (security)
     - security is the second name for an administrator; these people deal with user accounts and the billing system.
