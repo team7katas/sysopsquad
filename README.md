@@ -274,6 +274,9 @@ The deployment strategy here is cloud-agnostic, assuming you can use any cloud p
 ## Migration Plan
 TBD
 
+## Risk Analysis
+TBD
+
 ## Architecture Decision Records
 
  - [ADR-1](ADR/ADR-1-service-based.md) Use Service-based architectural style as the basic style.
@@ -284,8 +287,3 @@ TBD
  - [ADR-10](ADR/ADR-10-modular-services.md) Use sub-domain partitioning for service design.
  - [ADR-11](ADR/ADR-11-extract-payment-job.md) Extract payment processing into a separate component (Payment Job).
  - [ADR-12](ADR/ADR-12-gateways.md) Offload operational concerns into API Gateways.
-
-## TODO:
- - Marchitecture
- - Migration Plan
- - Risk analysis
