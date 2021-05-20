@@ -5,7 +5,7 @@ ADR-1: Use Service-based architectural style as the basic style
 Proposed
 
 ## Context: 
-Choose overall architectural approach
+While being a small business the company might have been happy with the monolithic application. But when the business has grown up to the country scale the company now needs a distributed solution to stay in business.
 
 ## Decision: 
 We discovered four main domain areas here each having a separate group of architectural characteristics:

@@ -43,44 +43,73 @@ Penultimate Electronics is a large electronics giant that has numerous retail st
 
 The current trouble ticket system is a large monolithic application that was developed many years ago. Customers are complaining that consultants are never showing up due to lost tickets, and often times the wrong consultant shows up to fix something they know nothing about. Customers and call-center staff have been complaining that the system is not always available for web-based or call-based problem ticket entry. Change is difficult and risky in this large monolith - whenever a change is made, it takes too long and something else usually breaks. Due to reliability issues, the monolithic system frequently "freezes up" or crashes - they think it's mostly due a spike in usage and the number of customers using the system. If something isn't done soon, Penultimate Electronics will be forced to abandon this very lucrative business line and fire all of the experts.
 
+### Business Drivers
+
+The company suffers from a poorly performing customer support system that can wind up the business line. They want to develop a new robust and highly performing system that will allow them to stay in business and enable future growth.
+
 ## System Requirements
+
+### Stakeholders
+
+This section describes key stakeholders of the system and they architectural concerns.
+
+* **SH-1**: Administrator (security)
+    - security is the second name for an administrator; these people deal with user accounts and the billing system.
+
+* **SH-2**: Customer (availability, performance, scalability, robustness)
+    - customers want the system they're accessing is available anytime they want to use it, and that it responses quickly to their actions;
+    - they also don't want their tickets to be precessed and never lost.
+
+* **SH-3**: Expert (availability, performance)
+    - whenever an expert works on the field, the success of the problem resolution may depend on can they access the knowledge base the ticket system;
+    - a poorly performing system may have a high impact on the problem resolution and wastes customer's and expert's time.
+
+* **SH-4**: Manager (reportability)
+    - these people need to pay careful attention on what's going on: are there unsatisfied customer, are there tickets that won't have an expert assigned too long, are there any billing issues, etc.
+
+* **SH-5**: Helpdesk (availability, performance)
+    - this is the first line of support for the customers, so they need to have access to the troubleshooting articles and customer tickets when customer are calling for that;
+    - they provide direct person-to-person phone support, so their answers will have to be found as quickly as possible.
+
+* SH-6: Development team (extensibility)
+    - these guys are having hard time deploying changes to production because of high coupling and poor modularity of the current system.
 
 ### Functional Requirements
 
 * **UC-1**: **User maintenance**:
-    - administrator maintains internal user accounts;
-    - administrator maintains expert skillset, location, and availability;
+    - administrator maintains internal user accounts (SH-1);
+    - administrator maintains expert skillset, location, and availability *(SH-1);
 
 * **UC-2**: **Customer registration**:
-    - customers register their profile, credit card and support plan;
+    - customers register their profile, credit card and support plan (SH-2);
 
 * **UC-3**: **Ticket workflow**:
-    - customers submit tickets via web or by phone call (admins assist);
-    - experts use mobile app to read ticket and change ticket status;
-    - experts can search knowledge base via mobile app;
+    - customers submit tickets via web or by phone call (SH-2, SH-5);
+    - experts use mobile app to read ticket and change ticket status (SH-3);
+    - experts can search knowledge base via mobile app (SH-3);
 
 * **UC-4**: Survey submission:
-    - customers fill out and submit satisfaction surveys;
+    - customers fill out and submit satisfaction surveys (SH-2);
 
 * **UC-5**: **Knowledge base maintenance**:
-    - experts update knowledge base;
+    - experts update knowledge base (SH-3);
 
 * **UC-6**: **Reporting**:
-    - managers track ticket operations;
-    - managers generate reports: financial, expert performance, ticketing;
+    - managers track ticket operations (SH-4);
+    - managers generate reports: financial, expert performance, ticketing (SH-4);
 
 * **UC-7**: **Billing**:
-    - customers are billed automatically (monthly);
-    - customers can view their billing history and statements;
-    - administrator manages billing processing for customers;
+    - customers are billed automatically on monthly basis (SH-2);
+    - customers can view their billing history and statements (SH-2);
+    - administrator manages billing processing for customers (SH-1);
 
 * **UC-8**: **Notification**:
-    - customers receive SMS or email about expert assignment;
-    - customers receive email with a link to survey web form;
-    - experts receive SMS about ticket assignment;
+    - customers receive SMS or email about expert assignment (SH-2);
+    - customers receive email with a link to survey web form (SH-2);
+    - experts receive SMS about ticket assignment (SH-3);
 
 * UC-9: Ticket search:
-    - helpdesk users need access to the ticket base to clarify ticket status;
+    - helpdesk users need access to the ticket base to clarify ticket status (SH-5);
 
 ### Architecture Characteristics Requirements
 
@@ -104,8 +133,8 @@ The current trouble ticket system is a large monolithic application that was dev
 * **QA-5**: **security** (UC-2, UC-7)
     - customer personal information and credit cards should be stored in secure and comply to PCI requirements;
 
-* **QA-6**: **deployability** (all use cases)
-    - deployments should be safe and avoid regression in unrelated components;
+* **QA-6**: extensibility** (all use cases, SH-6)
+    - one of the critical concerns regarding the current system is that whenever a change is made, it takes too long and something else usually breaks. This makes us think about improved modularity of the new system.
 
 ### Constraints
 * **CON-1**: Integration? Cloud/on-prem?
@@ -149,12 +178,13 @@ The system context diagram below depicted key users of the system and its extern
 
 The containers diagram that follows shows the high-level shape of the software architecture and how responsibilities are distributed across containers. It also shows the major technology choices and how the containers communicate with one another.
 
-The architecture is build around three main domains that have been discovered during the problem analysis:
+The architecture is build around four main domains that have been discovered during the problem analysis:
  - customer-facing services, such as ticket submission, customer profiles, survey submission etc;
  - expert services, such as ticket acceptance and knowledge base search;
- - administration services, such as reporting, survey analysis, ticket tracking etc.
+ - administration services, such as reporting, survey analysis, ticket tracking etc;
+ - billing service, which require high attention to security.
 
-The architectural style used here as the bases is Service-based with event-driven elements (see [ADR-1](ADR/ADR-1-service-based.md) and [ADR-2](ADR/ADR-2-event-driven-broker.md) for details).
+The architectural style used here as the bases is Service-based architecture (see [ADR-1](ADR/ADR-1-service-based.md) for details).
 
 ![Containers](images/containers.jpg "Containers")
 
@@ -250,3 +280,8 @@ TBD
  - [ADR-10](ADR/ADR-10-modular-services.md) Use sub-domain partitioning for service design.
  - [ADR-11](ADR/ADR-11-extract-payment-job.md) Extract payment processing into a separate component (Payment Job).
  - [ADR-12](ADR/ADR-12-gateways.md) Offload operational concerns into API Gateways.
+
+## TODO:
+ - Marchitecture
+ - Migration Plan
+ - Risk analysis
