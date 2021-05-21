@@ -114,7 +114,7 @@ This section describes key stakeholders of the system and their architectural co
     - customers receive email with a link to survey web form (SH-2);
     - experts receive SMS about ticket assignment (SH-3);
 
-* UC-9: Ticket search:
+* **UC-9**: **Ticket search**:
     - helpdesk users need access to the ticket base to clarify ticket status (SH-5);
 
 ### Architecture Characteristics Requirements
