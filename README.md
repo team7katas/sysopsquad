@@ -7,7 +7,9 @@
 ## Contents
 
 - [Welcome](#welcome)  
+    - [About the name](#about-the-name)
 - [Business Case](#business-case)  
+    - [Business Drivers](#business-drivers)
 - [System Requirements](#system-requirements)  
     - [Functional Requirements](#functional-requirements)
     - [Architecture Characteristics Requirements](#architecture-characteristics-requirements)
@@ -197,65 +199,56 @@ The architectural style used here as the bases is Service-based architecture (se
 This section explains some key use cases to demonstrate how corresponding workflows pass through containers.
 
 #### UC-3: Ticket submission
-The following diagram illustrates the ticket registration by the customer.
-
-**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+The following diagram illustrates the process of a ticket registration by the customer.
 
 ![UC-3: Ticket submission](images/ticket-submission.jpg "Ticket Submission")
 
-#### UC-3: Ticket Created event
+Important thing to note is that the requests succeeds after the ticket is saved in the customer database and the corresponding event is fired for the ticket processing area. This way the customer will be able to see the new ticket immediately after the page refresh and will not have to wait on any further actions on the ticket.
+
+#### UC-3: Ticket assignment
 The diagram below explains how the system processes a new ticket and assigns it an expert.
 
-**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+![UC-3: Ticket Created](images/ticket-assignment.jpg)
 
-![UC-3: Ticket Created](images/ticket-created.jpg)
+Since Ticket Process is a job that runs periodically, tickets that cannot be assigned at the given moment will never be lost, they we bill processed next time the job will run.
 
-If an expert cannot be found at the given moment, Ticket Processor will have to work on that ticket once again later - maybe some expert will be freed from the job, or a new expert will appear in the system. Depending on the technology chosen, "delay message" can be implemented in different ways. This can be a native message broker's feature that enables message rescheduling (both RabbitMQ and ActiveMQ support that by the way).
+Also, notice that an assignment is a separate entity. This way we can store a history of assignments.
 
-Or, if the message broker does not support that or it is tricky to use, the new event can be rescheduled by using a scheduler, like cron. Anyway, the idea here is that the ticket cannot be forgotten and Ticket Processor has to work on it until an appropriate expert will be found. A manager will pay attention to tickets that stay pending too long and can take some manual action to help the situation.
-
-#### UC-3: Ticket Assigned
+#### UC-3: Ticket acceptance
 This diagram continues the ticket workflow and shows how the Ticket Assigned event is processed by the Sysops Expert user.
 
-**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+![UC-3: Ticket Assigned](images/ticket-acceptance.jpg)
 
-![UC-3: Ticket Assigned](images/ticket-assigned.jpg)
+The experts operation succeeds as soon as the ticket status is saved in the database. And in case of acceptance the corresponding even is fired to the customer area.
 
-#### UC-3: Ticket Accepted/Rejected
-This diagram illustrates what happens when the Sysops Expert either accepts or rejects the ticket.
-
-**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
-
-![UC-3: Ticket Accepted/Rejected](images/ticket-accepted-rejected.jpg)
-
-#### UC-3: Ticket In-Progress
+#### UC-3: Ticket in-progress
 This diagram demonstrates how the customer is notified when the Sysops Expert accepted the ticket.
-
-**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
 
 ![UC-3: Ticket In-Progress](images/ticket-inprogress.jpg)
 
-#### UC-3: Ticket Completed
-This diagram explains the process when the Sysops Expert solved the problem and marked the ticket as completed.
+Important to notice that the ticket is saved in the customer database prior to the notification event so that the customer will see the actual ticket status upon the notification receive.
 
-**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
+#### UC-3: Ticket completion
+This diagram explains the process when the Sysops Expert solved the problem and marks the ticket as completed.
 
-![UC-3: Ticket Completed](images/ticket-completed.jpg)
+![UC-3: Ticket Completed](images/ticket-completion.jpg)
 
 #### UC-3: Ticket Resolved
 This diagram illustrates how the customer receives a notification about the ticket resolution and link to the survey form.
 
-**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
-
 ![UC-3: Ticket Resolved](images/ticket-resolved.jpg)
+
+First, the ticket status has to be updated in the customer database, so that upon receiving any notifications the customer will see the actual ticket status on the Customer Portal.
 
 #### UC-4: Survey Submission
 
 And finally the last step in the ticket resolution flow is survey submission by the customer.
 
-**Note** that Gateway APIs are intentionally omitted to reduce clutter. Those are simple pass-through services that perform operational tasks.
-
 ![UC-4: Survey Submission](images/survey-submission.jpg)
+
+From the customer perspective this is a fire-and-forget even so the operation succeeds as soon as the "Submit" button is clicked.
+
+Analytics API can perform some preliminary processing of the survey if necessary or simply store it in the database for the reporting.
 
 #### UC-7: Monthly billing
 The diagram illustrates the monthly billing workflow.
@@ -273,6 +266,10 @@ The deployment strategy here is cloud-agnostic, assuming you can use any cloud p
 
 ## Migration Plan
 TBD
+
+1. Extract Customer API
+    1. Move all customer related functionality into a separate service.
+    2. Extract customer data
 
 ## Risk Analysis
 TBD
