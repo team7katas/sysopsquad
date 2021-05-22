@@ -9,7 +9,6 @@
 - [Welcome](#welcome)  
     - [About the name](#about-the-name)
 - [Business Case](#business-case)  
-    - [Business Drivers](#business-drivers)
 - [System Requirements](#system-requirements)  
     - [Functional Requirements](#functional-requirements)
     - [Architecture Characteristics Requirements](#architecture-characteristics-requirements)
@@ -49,7 +48,19 @@ The desired solution from the functional perspective is represented at the follo
 
 ![Marketecture](images/marketecture.jpg)
 
-### Business Drivers
+**Business Drivers**
+
+What business drives we can learn from the situation:
+
+ * Poorly performing ticket tracking system*.
+ * The whole business line can be abandoned.
+ * Many people are at risk of losing their jobs.
+
+**Business Goals**
+
+The company establishes the following business goal to help the situation:
+
+ * Develop a new ticket tracking system that will satisfy the required qualities.
 
 The company suffers from a poorly performing customer support system that can wind up the business line. They want to develop a new robust and highly performing system that will allow them to stay in business and enable future growth.
 
