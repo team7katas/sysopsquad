@@ -50,7 +50,7 @@ The desired solution from the functional perspective is represented at the follo
 
 **Business Drivers**
 
-What business drives we can learn from the situation:
+What business drivers can we learn from the situation:
 
  * Poorly performing ticket tracking system*.
  * The whole business line can be abandoned.
