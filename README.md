@@ -209,6 +209,12 @@ The architectural style used here as the bases is Service-based architecture (se
 
 This section explains some key use cases to demonstrate how corresponding workflows pass through containers.
 
+#### UC-2: Customer registration
+The following sequence diagram highlights some key requests that the customer performs during registration in the system.
+One worth paying attention is registration of a credit card. In the customer database we store only some minimal credit card data to let the customer possibility identify which card do they have already registered. All the details of the credit card are encrypted and securely passed to the billing system (see [ADR-4](ADR/ADR-4-extract-billing-quanta.md)).
+
+![UC-2: Customer registration](images/customer-registration.jpg "Customer Registration")
+
 #### UC-3: Ticket submission
 The following diagram illustrates the process of a ticket registration by the customer.
 
