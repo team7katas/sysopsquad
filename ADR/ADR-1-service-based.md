@@ -15,7 +15,7 @@ We discovered four main domain areas here each having a separate group of archit
  - Billing services. This is about the customers money. If an attacker will get access to the credit card information it will be a disaster and may have legal implications. This part of the system may need to pass PCI certification, so isolating it from the rest of the system will simplify this procedure a lot. This is an isolated security zone with no incoming requests from the other domains.
  - Administration services, such as user management, analytics and reporting. These people do a very important work but nothing critical will happen if a report generation will take a little longer, or if an administrator will update an expert profile few hour later due to maintenance or something. Security is still important here because admin credentials cannot be exposed, but this is different story from billing security level.
 
-This makes us to think about separate architectural quantas for each of these four domain and Service-based approach seems to be a good shot here. While providing good fault-tolerance, scalability, and agility possibilities it free from cost overhead of Microservices approach.
+This makes us to think about separate architectural quantum for each of these four domain and Service-based approach seems to be a good shot here. While providing good fault-tolerance, scalability, and agility possibilities it free from cost overhead of Microservices approach.
 
 ![Service-based](../images/adr-1.jpg)
 
