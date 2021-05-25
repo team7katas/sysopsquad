@@ -323,6 +323,7 @@ Additional concerns regarding the API Gateway:
  - [ADR-4](ADR/ADR-4-extract-billing-quanta.md) Extract billing architectural quantum.
  - [ADR-5](ADR/ADR-5-extract-customer-quantum.md) Extract customer architectural quantum.
  - [ADR-6](ADR/ADR-6-separate-customer-db.md) Use separate customer database.
+ - [ADR-7](ADR/ADR-7-separate-reporting-db.md) Separate analytics and reporting database.
  - [ADR-9](ADR/ADR-9-notification-service.md) Extract notification service.
  - [ADR-10](ADR/ADR-10-modular-services.md) Use sub-domain partitioning for service design.
  - [ADR-11](ADR/ADR-11-extract-payment-job.md) Extract payment processing into a separate component (Payment Job).
