@@ -21,7 +21,7 @@
     - [Containers](#containers)  
     - [Process Views](#process-views)  
     - [Deployment](#deployment)  
-- [Migration Plan](#migration-plan)
+- [Transition Architecture](#transition-architecture)
 - [Architecture Decision Records](#architecture-decision-records)
 
 ## Welcome
@@ -280,6 +280,40 @@ The deployment diagram illustrates how the system containers are mapped to the i
 Note the colors have not special meaning, they are just to distinguish thing from one another.
 
 The deployment strategy here is cloud-agnostic, assuming you can use any cloud provider of your choice or stay totally on-prem. An exception is the billing stuff, which is recommended to remain on-prem anyway for security considerations.
+
+## Transition Architecture
+
+The solution proposed in the [Target Architecture](#containers) section is the final ambition that solves most of the problems and risks, but can require significant development efforts because of the database split required. Thus we can divide the whole work into two phases:
+
+1. Solve critical problems an stick with a monolithic database until it becomes a bottleneck.
+2. Migrate further to the target architecture to deal with all remaining risks.
+
+Here is the transitional architecture proposal that solves critical problems but leaves some risks (analysis follows).
+Note that we still leverage asynchronous messaging for ticket processing here to enable independent scalability and availability for different parts of the system. In this case, messages can contain mach less information because all the details can be taken by the receiver from the database.
+
+![Transition Architecture](images/transition.jpg)
+
+Since we have a single monolithic database we can save some efforts on additional messaging and replication.
+
+### Risk Analysis
+These are the possible high risks of the transition architecture.
+
+#### Performance
+Because this is a monolithic database it can become a performance bottleneck. The same concern regarding the single API Gateway - if not scaled properly may also become a bottleneck.
+
+#### Availability
+A single API Gateway may introduce a single point of failure for the whole system (see [ADR-12](ADR/ADR-12-gateways.md)).
+
+#### Security
+There is a risk that admin staff can get access to the customer credit card data. We certainly want to prevent that by extracting billing into a separate architectural quantum (see [ADR-4](ADR/ADR-4-extract-billing-quanta.md)) and isolating it in a separate network zone with strict access permissions.
+
+The same concern is regarding the customer services - we don't want to allow an attacker to get access to the reset of the system. A significant security improvement would be to migrate customer services and data in a separate quantum in isolate it in a separate network zone (see [ADR-5](ADR/ADR-5-extract-customer-quantum.md)).
+
+#### Other
+Additional concerns regarding the API Gateway:
+
+* Adds coupling between the gateway and the internal service.
+* If developed by a single development team, may become a development bottleneck.
 
 ## Architecture Decision Records
 
