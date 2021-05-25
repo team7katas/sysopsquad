@@ -154,7 +154,7 @@ This section describes key stakeholders of the system and their architectural co
     - one of the critical concerns regarding the current system is that whenever a change is made, it takes too long and something else usually breaks. This makes us think about improved modularity of the new system.
 
 ### Constraints
-* **CON-1**: Integration? Cloud/on-prem?
+* **CON-1**: Integration? Cloud/on-prem? Technology stak?
 
 ### Assumptions
 * **ASM-1**: The mobile app can be changed.
@@ -281,18 +281,13 @@ Note the colors have not special meaning, they are just to distinguish thing fro
 
 The deployment strategy here is cloud-agnostic, assuming you can use any cloud provider of your choice or stay totally on-prem. An exception is the billing stuff, which is recommended to remain on-prem anyway for security considerations.
 
-## Migration Plan
-TBD
-
-## Risk Analysis
-TBD
-
 ## Architecture Decision Records
 
  - [ADR-1](ADR/ADR-1-service-based.md) Use Service-based architectural style as the basic style.
  - [ADR-2](ADR/ADR-2-event-driven-broker.md) Use message queues with guaranteed delivery for ticket workflow.
  - [ADR-3](ADR/ADR-3-search-expert.md) Extract ticket assignment into a separate batch processing job.
  - [ADR-4](ADR/ADR-4-extract-billing-quanta.md) Extract billing architectural quantum.
+ - [ADR-5](ADR/ADR-5-extract-customer-quantum.md) Extract customer architectural quantum.
  - [ADR-6](ADR/ADR-6-separate-customer-db.md) Use separate customer database.
  - [ADR-9](ADR/ADR-9-notification-service.md) Extract notification service.
  - [ADR-10](ADR/ADR-10-modular-services.md) Use sub-domain partitioning for service design.
