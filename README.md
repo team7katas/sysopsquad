@@ -1,4 +1,4 @@
-# The Sysops Squad Architectural Kata by O'Reilly 2021
+# The Sysops Squad Architectural Kata by O'Reilly, May 2021
 
 ## Team Seven
 
@@ -31,7 +31,7 @@ First Law of Software Architecture*
 
 Welcome to the Sysops Squad Architectural Kata run by O'Reilly in May 2021.
 
-This page is architectural documentation for the solution presented by **Team Seven**.
+This page is architectural documentation for the solution proposal by **Team Seven**.
 
 ### About the name
 <img align="right" width="200" height="183" src="images/jersey.jpg">
@@ -89,7 +89,7 @@ This section describes key stakeholders of the system and their architectural co
     - this is the first line of support for the customers, so they need to have access to the troubleshooting articles and customer tickets when customer are calling for that;
     - they provide direct person-to-person phone support, so their answers will have to be found as quickly as possible.
 
-* SH-6: Development team (extensibility)
+* **SH-6**: Development team (extensibility)
     - these guys are having hard time deploying changes to production because of high coupling and poor modularity of the current system.
 
 ### Functional Requirements
@@ -317,6 +317,9 @@ Additional concerns regarding the API Gateway:
 * If developed by a single development team, may become a development bottleneck.
 
 ## Architecture Decision Records
+
+> *Why is more important than how.  
+Second Law of Software Architecture*
 
  - [ADR-1](ADR/ADR-1-service-based.md) Use Service-based architectural style as the basic style.
  - [ADR-2](ADR/ADR-2-event-driven-broker.md) Use message queues with guaranteed delivery for ticket workflow.
