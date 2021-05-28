@@ -53,7 +53,7 @@ The desired solution from the functional perspective is represented at the follo
 
 What business drivers can we learn from the situation:
 
- * Poorly performing ticket tracking system*.
+ * Poorly performing ticket tracking system.
  * The whole business line can be abandoned.
  * Many people are at risk of losing their jobs.
 
@@ -71,32 +71,32 @@ The company suffers from a poorly performing customer support system that can wi
 
 This section describes key stakeholders of the system and their architectural concerns.
 
-* **SH-1**: Administrator (security)
+* **SH-1**: **Administrator** (security)
     - security is the second name for an administrator; these people deal with user accounts and the billing system.
 
-* **SH-2**: Customer (availability, performance, scalability, robustness)
+* **SH-2**: **Customer** (availability, performance, scalability, robustness)
     - customers want the system they're accessing is available anytime they want to use it, and that it responses quickly to their actions;
     - they also don't want their tickets to be precessed and never lost.
 
-* **SH-3**: Expert (availability, performance)
+* **SH-3**: **Expert** (availability, performance)
     - whenever an expert works on the field, the success of the problem resolution may depend on can they access the knowledge base the ticket system;
     - a poorly performing system may have a high impact on the problem resolution and wastes customer's and expert's time.
 
-* **SH-4**: Manager (reportability)
+* **SH-4**: **Manager** (reportability)
     - these people need to pay careful attention on what's going on: are there unsatisfied customer, are there tickets that won't have an expert assigned too long, are there any billing issues, etc.
 
-* **SH-5**: Helpdesk (availability, performance)
+* **SH-5**: **Helpdesk** (availability, performance)
     - this is the first line of support for the customers, so they need to have access to the troubleshooting articles and customer tickets when customer are calling for that;
     - they provide direct person-to-person phone support, so their answers will have to be found as quickly as possible.
 
-* **SH-6**: Development team (extensibility)
+* **SH-6**: **Development team** (extensibility)
     - these guys are having hard time deploying changes to production because of high coupling and poor modularity of the current system.
 
 ### Functional Requirements
 
 * **UC-1**: **User maintenance**:
     - administrator maintains internal user accounts (SH-1);
-    - administrator maintains expert skillset, location, and availability *(SH-1);
+    - administrator maintains expert skillset, location, and availability (SH-1);
 
 * **UC-2**: **Customer registration**:
     - customers register their profile, credit card and support plan (SH-2);
@@ -106,7 +106,7 @@ This section describes key stakeholders of the system and their architectural co
     - experts use mobile app to read ticket and change ticket status (SH-3);
     - experts can search knowledge base via mobile app (SH-3);
 
-* **UC-4**: Survey submission:
+* **UC-4**: **Survey submission**:
     - customers fill out and submit satisfaction surveys (SH-2);
 
 * **UC-5**: **Knowledge base maintenance**:
@@ -151,14 +151,14 @@ This section describes key stakeholders of the system and their architectural co
 * **QA-5**: **security** (UC-2, UC-7)
     - customer personal information and credit cards should be stored in secure and comply to PCI requirements;
 
-* **QA-6**: extensibility** (all use cases, SH-6)
+* **QA-6**: **extensibility** (all use cases, SH-6)
     - one of the critical concerns regarding the current system is that whenever a change is made, it takes too long and something else usually breaks. This makes us think about improved modularity of the new system.
 
 ### Constraints
 * **CON-1**: Integration? Cloud/on-prem? Technology stak?
 
 ### Assumptions
-* **ASM-1**: The mobile app can be changed.
+* **ASM-1**: The mobile app is a part of the system and can be changed.
 * **ASM-2**: Helpdesk assistants (aka Call Center) need access to the ticket sub-system and some customer information (contacts, maybe support plan). These are also users of the system although are not listed in the "Main Four Users" of the original requirements.
 * **ASM-3**: Call tracking system is out of scope of Sysops Squad system.
 * **ASM-4**: The company stores customer credit card information locally and does not interoperate with a 3-party authority (like authorize.net in the US).
