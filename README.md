@@ -5,6 +5,7 @@
 **Pavel, Suheyl, Nikita, Hassan**
 
 ## Contents
+<img align="right" width="210" height="368" src="images/badge.png">
 
 - [Welcome](#welcome)  
     - [About the name](#about-the-name)
