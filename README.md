@@ -1,4 +1,4 @@
-# The Sysops Squad Architectural Kata by O'Reilly, May 2021
+# The Sysops Squad Architectural Kata<br>by O'Reilly, April - May 2021
 
 ## Team Seven
 
@@ -29,9 +29,9 @@
 > *Everything in software architecture is a trade-off.  
 First Law of Software Architecture*
 
-Welcome to the Sysops Squad Architectural Kata run by O'Reilly in May 2021.
+Welcome to the Sysops Squad Architectural Kata run by O'Reilly in April - May 2021.
 
-This page is architectural documentation for the solution proposal by **Team Seven**.
+This page is architectural documentation for the solution proposal from **Team Seven**.
 
 ### About the name
 <img align="right" width="200" height="183" src="images/jersey.jpg">
